@@ -82,6 +82,7 @@
               autocomplete="username"
               v-model.trim="username"
             />
+            <div v-if="usernameErr" class="fieldError">Incorrect value</div>
 
             <label for="floatingPassword" class="form__label">Password</label
             ><br />
@@ -91,8 +92,9 @@
               id="floatingPassword"
               placeholder="Password"
               autocomplete="current-password"
-              v-model.trim="password"
+              v-model.number="password"
             />
+            <div v-if="passwordErr" class="fieldError">Incorrect value</div>
           </div>
 
           <button type="submit" class="form__submit">LOGIN</button>
@@ -124,8 +126,29 @@ export default {
     return {
       username: "",
       password: null,
+      usernameErr:false,
+      passwordErr:false,
+      auth: false,
     };
   },
+  methods:{
+    onSubmit(){
+      if(this.username==='Admin'){
+        if(this.password===12345){
+          this.auth = true
+          localStorage.setItem("auth", JSON.stringify(this.auth))
+          this.$router.push({name:'todoPage'})
+        } else {
+          this.passwordErr = true
+          return
+        } 
+      }
+      else {
+        this.usernameErr = true
+        return
+      }
+    }
+  }
 };
 </script>
 
@@ -387,9 +410,6 @@ export default {
   margin-top: 3px;
 }
 
-.article__title {
-}
-
 .article__text {
   margin-top: 4px;
   font-size: 10px;
@@ -443,5 +463,13 @@ export default {
   width: 100%;
   height: 35px;
   margin-top: 10px;
+}
+
+.fieldError{
+  color: red;
+  text-align: left;
+  margin-left:10px;
+  margin-top: 5px;
+  font-size: 10px;
 }
 </style>

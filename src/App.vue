@@ -1,9 +1,33 @@
 <template>
   <nav>
-    <router-view/>
+    <div v-if="lsAuth">
+      <LoginView />
+    </div>
+      <div v-else>
+      <ToDoView />
+      </div>
   </nav>
 </template>
+<script>
+import LoginView from './views/LoginView.vue';
+import ToDoView from './views/ToDoView.vue';
+export default {
+  name:'app-component',
 
+  data(){
+    return{
+      lsAuth: {},
+      auth: this.lsAuth?JSON.parse(this.lsAuth) : {}
+    }
+  },
+
+  components:[LoginView, ToDoView],
+
+  mounted(){
+    this.lsAuth = localStorage.getItem('auth')
+  }
+}
+</script>
 <style>
 #app {
   font-family: 'Roboto regular', sans-serif;
@@ -23,3 +47,4 @@ nav a.router-link-exact-active {
   text-decoration: none;
 }
 </style>
+ToDoView

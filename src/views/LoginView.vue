@@ -70,40 +70,42 @@
             </div>
           </div>
         </div>
+
+        <form class="form-section" @submit.prevent="onSubmit()">
+          <div class="section__input">
+            <label for="floatingInput" class="form__label">Name</label><br />
+            <input
+              type="text"
+              class="form__input"
+              id="floatingInput"
+              placeholder="Username"
+              autocomplete="username"
+              v-model.trim="username"
+            />
+
+            <label for="floatingPassword" class="form__label">Password</label
+            ><br />
+            <input
+              type="password"
+              class="form__input"
+              id="floatingPassword"
+              placeholder="Password"
+              autocomplete="current-password"
+              v-model.trim="password"
+            />
+          </div>
+
+          <button type="submit" class="form__submit">LOGIN</button>
+
+          <div class="">
+            <router-link class="form__forgot" :to="{ name: 'LoginView' }"
+              >Forgot password</router-link
+            >
+          </div>
+
+          <button type="submit" class="form__register">Register now</button>
+        </form>
       </div>
-      <!-- <form class="form" @submit.prevent="onSubmit()">
-        <div class="">
-          <label for="floatingInput">Name</label>
-          <input
-            type="text"
-            class=""
-            id="floatingInput"
-            autocomplete="username"
-            v-model.trim="username"
-          />
-        </div>
-
-        <div class="">
-          <label for="floatingPassword">Password</label>
-          <input
-            type="password"
-            class=""
-            id="floatingPassword"
-            autocomplete="current-password"
-            v-model.trim="password"
-          />
-        </div>
-
-        <button type="submit" class="">LOGIN</button>
-
-        <div class="">
-          <router-link class="" to="/forgotPassword"
-            >Forgot password</router-link
-          >
-        </div>
-
-        <button type="submit" class="">REGISTER NOW</button>
-      </form> -->
     </div>
   </div>
 
@@ -129,7 +131,7 @@ export default {
 
 <style scoped>
 @media only screen and (min-width: 1201px) {
-  .container{
+  .container {
     height: 100%;
   }
   .top-section {
@@ -152,7 +154,10 @@ export default {
   .article {
     font-size: 11px;
   }
-  
+  .form-section {
+    right: 15vw;
+    top: 34vh;
+  }
 }
 @media only screen and (max-width: 1200px) {
   .top-section {
@@ -165,14 +170,17 @@ export default {
   .description__title {
     margin-bottom: 30px;
   }
-   .bottom-section__description {
+  .bottom-section__description {
     margin-left: 20%;
     width: 40%;
   }
   .article {
     font-size: 10px;
   }
-
+  .form-section {
+    right: 12vw;
+    top: 25vh;
+  }
 }
 @media only screen and (max-width: 992px) {
   .top-section {
@@ -185,14 +193,17 @@ export default {
   .description__title {
     margin-bottom: 20px;
   }
-   .bottom-section__description {
+  .bottom-section__description {
     margin-left: 10%;
     width: 45%;
   }
   .article__title {
     font-size: 10px;
   }
-  
+  .form-section {
+    right: 12vw;
+    top: 14vh;
+  }
 }
 @media only screen and (max-width: 768px) {
   .top-section {
@@ -200,21 +211,27 @@ export default {
     height: 20vh;
   }
   .main-title__text {
-    font-size: 15px;
+    font-size: 14px;
   }
   .description__title {
     margin-bottom: 15px;
   }
   .bottom-section__description {
     margin-left: 5%;
-    width: 90%;
+    width: 45%;
   }
   .article {
     font-size: 11px;
   }
+  .form-section {
+    right: 6vw;
+    top: 5vh;
+  }
 }
 @media only screen and (max-width: 576px) {
-  
+  .container {
+    height: 100vh !important;
+  }
   .top-section {
     background-size: cover;
     height: 15vh;
@@ -232,10 +249,35 @@ export default {
   .article {
     font-size: 11px;
   }
+  .form-section {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 65%;
+    width: 88% !important;
+    height: 25vh !important;
+    padding-top: 5px;
+  }
+  .section__input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .form__label {
+    margin-right: 10px;
+  }
+  .form__input {
+    width: 40% !important;
+  }
+  .form__submit {
+    width: 30vw !important;
+    margin-top:7px !important;
+  }
 }
 @media only screen and (max-width: 376px) {
-  .container{
-    height: 76vh!important;
+  .container {
+    height: 95vh !important;
   }
   .top-section {
     background-size: cover;
@@ -257,14 +299,40 @@ export default {
   .article {
     font-size: 11px;
   }
+  .form-section {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 72%;
+    width: 88% !important;
+    height: 25vh !important;
+    padding-top: 5px;
+  }
+  .section__input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .form__label {
+    display: none !important;
+  }
+  .form__input {
+    width: 40% !important;
+  }
+  .form__submit {
+    width: 30vw !important;
+    margin-top:7px !important;
+  }
 }
 
 .container {
   display: flex;
   justify-content: center;
-  height:100%;
+  height: 100%;
   /* width: 100%;
   flex-direction: column; */
+  position: relative;
 }
 
 .top-section {
@@ -327,10 +395,53 @@ export default {
   font-size: 10px;
 }
 
-.form {
+.form-section {
+  position: absolute;
   background-color: #fff;
+  box-shadow: 0 2px 15px 2px rgba(0, 0, 0, 0.1);
   width: 250px;
   height: 250px;
-  padding: 25px;
+}
+
+.form__label {
+  float: left;
+  font-size: 11px;
+  color: #464646;
+  margin-left: 9px;
+  margin-top: 15px;
+}
+
+.form__input {
+  width: 90%;
+  height: 30px;
+}
+
+.form__submit {
+  width: 93%;
+  height: 30px;
+  margin: 25px 0 10px 0;
+  color: #fff;
+  background-color: #0076c0;
+  border-color: transparent;
+}
+
+.form__submit:hover {
+  color: #0076c0;
+  background-color: #fff;
+  border: 2px solid #0076c0;
+}
+
+.form__forgot {
+  color: #056dae;
+  font-size: 12px;
+}
+
+.form__register {
+  color: #333333;
+  background-color: #f6f6f6;
+  border-color: transparent;
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
 }
 </style>

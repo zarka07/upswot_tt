@@ -68,6 +68,7 @@ export default {
   font-size: 11px;
   flex-wrap: wrap;
   font-weight: 500;
+  justify-content: flex-end;
 }
 
 a {

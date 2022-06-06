@@ -1,9 +1,8 @@
 <template>
-
   <Header />
 
   <div class="container">
-    <div style="width:100%">
+    <div style="width: 100%">
       <div class="top-section">
         <div class="description__title">
           <p class="main-title__text">Welcome to</p>
@@ -27,13 +26,15 @@
               alt="vector"
             />
             <div class="article">
-              <span class="article__title"> Interactive Reporting </span><br />
-              <span class="article__text">
+              <div class="article__title">
+                <strong>Interactive Reporting </strong>
+              </div>
+              <div class="article__text">
                 In just a few clicks, you can connect your data from 1C, CRM
                 (Bitrix24, AmoCRM, ZohoCRM), E-commerce (PROM.UA, Rozetka,
                 ebay), Logistic (Nova Poshta), Google Analytics and many more
                 systems that reflect different aspects of business activities.
-              </span>
+              </div>
             </div>
           </div>
           <div class="description__article">
@@ -43,11 +44,13 @@
               alt="vector"
             />
             <div class="article">
-              <span class="article__title"> Automated data updates </span><br />
-              <span class="article__text">
+              <div class="article__title">
+                <strong>Automated data updates</strong>
+              </div>
+              <div class="article__text">
                 The application automatically updates and structures the data in
                 just 60 seconds, saving you time and money.
-              </span>
+              </div>
             </div>
           </div>
           <div class="description__article">
@@ -57,11 +60,13 @@
               alt="vector"
             />
             <div class="article">
-              <span class="article__title"> Data Security </span><br />
-              <span class="article__text">
+              <div class="article__title">
+                <strong>Data Security</strong>
+              </div>
+              <div class="article__text">
                 The Bank guarantees the safety of your personal data, ensuring
                 their integrity and confidentiality.
-              </span>
+              </div>
             </div>
           </div>
         </div>
@@ -103,7 +108,6 @@
   </div>
 
   <Footer />
-  
 </template>
 
 <script>
@@ -124,25 +128,153 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 1201px) {
+  .container{
+    height: 100%;
+  }
+  .top-section {
+    background-size: cover;
+    height: 50vh;
+  }
+  .main-title__text {
+    font-size: 40px;
+  }
+  .description__title {
+    margin-bottom: 40px;
+  }
+  .bottom-section__description {
+    margin-left: 20%;
+  }
+  .bottom-section__description {
+    margin-left: 20%;
+    width: 40%;
+  }
+  .article {
+    font-size: 11px;
+  }
+  
+}
+@media only screen and (max-width: 1200px) {
+  .top-section {
+    background-size: cover;
+    height: 40vh;
+  }
+  .main-title__text {
+    font-size: 30px;
+  }
+  .description__title {
+    margin-bottom: 30px;
+  }
+   .bottom-section__description {
+    margin-left: 20%;
+    width: 40%;
+  }
+  .article {
+    font-size: 10px;
+  }
+
+}
+@media only screen and (max-width: 992px) {
+  .top-section {
+    background-size: cover;
+    height: 30vh;
+  }
+  .main-title__text {
+    font-size: 20px;
+  }
+  .description__title {
+    margin-bottom: 20px;
+  }
+   .bottom-section__description {
+    margin-left: 10%;
+    width: 45%;
+  }
+  .article__title {
+    font-size: 10px;
+  }
+  
+}
+@media only screen and (max-width: 768px) {
+  .top-section {
+    background-size: cover;
+    height: 20vh;
+  }
+  .main-title__text {
+    font-size: 15px;
+  }
+  .description__title {
+    margin-bottom: 15px;
+  }
+  .bottom-section__description {
+    margin-left: 5%;
+    width: 90%;
+  }
+  .article {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  
+  .top-section {
+    background-size: cover;
+    height: 15vh;
+  }
+  .main-title__text {
+    font-size: 11px;
+  }
+  .description__title {
+    margin-bottom: 10px;
+  }
+  .bottom-section__description {
+    margin-left: 5%;
+    width: 90%;
+  }
+  .article {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 376px) {
+  .container{
+    height: 76vh!important;
+  }
+  .top-section {
+    background-size: cover;
+    height: 15vh;
+  }
+  .main-title__text {
+    font-size: 10px;
+  }
+  .description__title {
+    margin-bottom: 10px;
+  }
+  .bottom-section__description {
+    margin-left: 5%;
+    width: 90%;
+  }
+  .bottom__description__analytics {
+    font-size: 11px;
+  }
+  .article {
+    font-size: 11px;
+  }
+}
+
 .container {
   display: flex;
   justify-content: center;
   height:100%;
-  width: 100%;
-  flex-direction: column;
+  /* width: 100%;
+  flex-direction: column; */
 }
 
 .top-section {
   display: flex;
   align-items: flex-end;
-  height: 50vh;
   background-image: url(../assets/Background.png);
   background-repeat: no-repeat;
-  background-size:cover;
 }
 
 .description__title {
-  margin-bottom: 20px;
   margin-left: 20%;
   line-height: 1.5;
   text-align: left;
@@ -151,8 +283,8 @@ export default {
 .main-title__text {
   color: rgb(255, 255, 255) !important;
   line-height: 1.5;
-  font-size: 35px;
   margin: 0;
+  font-weight: 700;
 }
 
 .bottom-section {
@@ -162,10 +294,8 @@ export default {
 }
 
 .bottom-section__description {
-  margin-left: 20%;
   line-height: 1.5;
   text-align: left;
-  width: 35%;
 }
 
 .bottom__description__analytics {
@@ -176,26 +306,25 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .article {
-  font-size: 10px;
-  line-height: 1.5;
+  /* line-height: 1.5; */
   margin-left: 15px;
 }
 
 .article__vector {
   width: 13px;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 .article__title {
-  font-size: 13px;
-  margin-bottom: 1px;
 }
 
 .article__text {
+  margin-top: 4px;
+  font-size: 10px;
 }
 
 .form {

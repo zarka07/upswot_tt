@@ -14,10 +14,65 @@ export default {
 </script>
 
 <style scoped>
+@media only screen and (min-width: 1201px) {
+  .header {
+    height: 90px;
+  }
+  .header__logo {
+    height: 50px;
+    padding-left: 20%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .header {
+    height: 80px;
+  }
+  .header__logo {
+    height: 40px;
+    padding-left: 20%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .header {
+    height: 70px;
+  }
+  .header__logo {
+    height: 35px;
+    padding-left: 20%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header {
+    height: 60px;
+  }
+  .header__logo {
+    height: 30px;
+    padding-left: 20%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .header {
+    height: 50px;
+  }
+  .header__logo {
+    height: 25px;
+    padding-left: 20%;
+  }
+}
+@media only screen and (max-width: 376px) {
+  .header {
+    height: 40px;
+  }
+  .header__logo {
+    height: 20px;
+    padding-left: 20%;
+  }
+}
+
 .header {
   align-items: center;
   justify-content: center;
-  height: 100px;
+  /* height: 100px; */
   width: 100%;
 }
 
@@ -31,13 +86,5 @@ export default {
   height: 70%;
   display: flex;
   align-items: center;
-  /* justify-content:var(); */
-  
 }
-
-.header__logo {
-  height: 50px;
-  padding-left:20%;
-}
-
 </style>

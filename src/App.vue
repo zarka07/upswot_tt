@@ -1,28 +1,29 @@
 <template>
   <nav>
-    <!-- <login-view v-if="lsAuth"></login-view>
+    <login-view v-if="lsAuth"></login-view>
 
-    <to-do-view v-else></to-do-view> -->
+    <to-do-view v-else></to-do-view>
     <router-view/>
   </nav>
 </template>
 <script>
-//import LoginView from "./views/LoginView.vue";
-//import ToDoView from "./views/ToDoView.vue";
+import LoginView from "./views/LoginView.vue";
+import ToDoView from "./views/ToDoView.vue";
 export default {
   name: "app-component",
 
   data() {
     return {
-      //lsAuth: {},
-      //auth: this.lsAuth.status ? JSON.parse(this.lsAuth) : {},
+      auth: false,
+      lsAuth: false
     };
   },
 
-  //components: [LoginView, ToDoView],
+  components: [LoginView, ToDoView],
 
   mounted() {
     this.lsAuth = localStorage.getItem("auth");
+    this.auth = this.lsAuth ? JSON.parse(this.lsAuth) : false 
   },
 };
 </script>

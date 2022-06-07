@@ -14,9 +14,9 @@
           <button type="submit" class="section__addButton" @click="addTodo()">+</button>
         </div>
 
-        <div>{{lsTodos}}</div>
+        
         <div class="section__todos" v-for="(todo, index) in todos" :key="index">
-          <h5>{{ todo.name }}</h5>
+          <h5>{{ todo }}</h5>
 
           <div class="todos__buttons">
             <button class="" @click="editTodo(index)">edit</button>
@@ -41,32 +41,31 @@ export default {
       newTodo: "",
       indexEditTodo: null,
       tempNameTodo: "",
-      todos: this.lsTodos ? JSON.parse(this.lsTodos) : [],
+      todos:[]
+      //todos: this.lsTodos ? JSON.parse(this.lsTodos).stringify() : [],
     };
   },
 
   mounted() {
-    this.lsUsername = localStorage.getItem("username");
-    this.lsTodos = localStorage.getItem("lsTodos")
-    console.log(this.lsTodos)
+    this.lsUsername = localStorage.getItem("username"); 
+    this.lsTodos = localStorage.getItem("lsTodos") 
+    this.todos = this.lsTodos ? JSON.parse(this.lsTodos) : [] 
   },
 
   methods: {
     addTodo() {
       if (this.newTodo.length === 0) return;
       if (this.indexEditTodo === null) {
-        this.todos.push({
-          name: this.newTodo,
-        });
+        this.todos.push(this.newTodo);
         localStorage.setItem("lsTodos",JSON.stringify(this.todos))
       } else {
-        this.todos[this.indexEditTodo].name = this.newTodo;
+        this.todos[this.indexEditTodo] = this.newTodo;
         this.indexEditTodo = null;
       }
       this.newTodo = "";
     },
     editTodo(index) {
-      this.newTodo = this.todos[index].name;
+      this.newTodo = this.todos[index];
       this.indexEditTodo = index;
     },
     deleteTodo(index) {

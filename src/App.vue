@@ -1,9 +1,8 @@
 <template>
   <nav>
     <login-view v-if="lsAuth"></login-view>
-
     <to-do-view v-else></to-do-view>
-    <router-view/>
+    <router-view />
   </nav>
 </template>
 <script>
@@ -15,7 +14,7 @@ export default {
   data() {
     return {
       auth: false,
-      lsAuth: false
+      lsAuth: false,
     };
   },
 
@@ -23,10 +22,11 @@ export default {
 
   mounted() {
     this.lsAuth = localStorage.getItem("auth");
-    this.auth = this.lsAuth ? JSON.parse(this.lsAuth) : false 
+    this.auth = this.lsAuth ? JSON.parse(this.lsAuth) : false;
   },
 };
 </script>
+
 <style>
 #app {
   font-family: "Roboto regular", sans-serif;
@@ -39,7 +39,6 @@ export default {
 }
 
 nav a.router-link-exact-active {
-  /* color: #42b983; */
   color: #fff;
   text-decoration: none;
 }

@@ -58,7 +58,7 @@ export default {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-top:5px;
+  margin-top: 5px;
   padding-bottom: 10px;
   border-bottom: 1px solid #fff;
 }
@@ -80,7 +80,7 @@ a {
   align-content: center;
   justify-content: flex-start;
   font-size: 8px;
-  color:#FFF;
+  color: #fff;
   margin: 15px 0 15px 0;
 }
 

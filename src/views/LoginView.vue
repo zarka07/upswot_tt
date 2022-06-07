@@ -126,34 +126,33 @@ export default {
     return {
       username: "",
       password: null,
-      usernameErr:false,
-      passwordErr:false,
+      usernameErr: false,
+      passwordErr: false,
       auth: {
-        status:false,
-        username:""
+        status: false,
+        username: "",
       },
     };
   },
-  methods:{
-    onSubmit(){
-      if(this.username==='Admin'){
-        if(this.password===12345){
-          this.auth.status = true
-          this.auth.username = this.username
-          localStorage.setItem("username",this.auth.username)
-          localStorage.setItem("auth", JSON.stringify(this.auth.status)), 
-          this.$router.push({name:'todoPage'})
+  methods: {
+    onSubmit() {
+      if (this.username === "Admin") {
+        if (this.password === 12345) {
+          this.auth.status = true;
+          this.auth.username = this.username;
+          localStorage.setItem("username", this.auth.username);
+          localStorage.setItem("auth", JSON.stringify(this.auth.status)),
+            this.$router.push({ name: "todoPage" });
         } else {
-          this.passwordErr = true
-          return
-        } 
+          this.passwordErr = true;
+          return;
+        }
+      } else {
+        this.usernameErr = true;
+        return;
       }
-      else {
-        this.usernameErr = true
-        return
-      }
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -300,7 +299,7 @@ export default {
   }
   .form__submit {
     width: 30vw !important;
-    margin-top:7px !important;
+    margin-top: 7px !important;
   }
 }
 @media only screen and (max-width: 376px) {
@@ -350,7 +349,7 @@ export default {
   }
   .form__submit {
     width: 30vw !important;
-    margin-top:7px !important;
+    margin-top: 7px !important;
   }
 }
 
@@ -470,10 +469,10 @@ export default {
   margin-top: 10px;
 }
 
-.fieldError{
+.fieldError {
   color: red;
   text-align: left;
-  margin-left:10px;
+  margin-left: 10px;
   margin-top: 5px;
   font-size: 10px;
 }

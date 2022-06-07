@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header__top-background"></div>
     <div class="header__bottom-background">
-      <img class="header__logo" src="../assets/Logo.png" alt="Logo" />
+      <img class="header__logo" src="../assets/logo.png" alt="Logo" />
     </div>
   </div>
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="main">
-      <img class="main__logo" src="../assets/Logo.png" alt="Logo" />
+      <img class="main__logo" src="../assets/logo.png" alt="Logo" />
       <section class="todo-wrapper">
         <h1>Thank you, {{ lsUsername }}!</h1>
         <h1 class="todo-title">{{ today.day }}<br />{{ today.date }}</h1>

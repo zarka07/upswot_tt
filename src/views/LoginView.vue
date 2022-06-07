@@ -22,7 +22,7 @@
           <div class="description__article">
             <img
               class="article__vector"
-              src="../assets/Vector.png"
+              src="../assets/vector.png"
               alt="vector"
             />
             <div class="article">
@@ -40,7 +40,7 @@
           <div class="description__article">
             <img
               class="article__vector"
-              src="../assets/Vector.png"
+              src="../assets/vector.png"
               alt="vector"
             />
             <div class="article">
@@ -56,7 +56,7 @@
           <div class="description__article">
             <img
               class="article__vector"
-              src="../assets/Vector.png"
+              src="../assets/vector.png"
               alt="vector"
             />
             <div class="article">
@@ -357,15 +357,13 @@ export default {
   display: flex;
   justify-content: center;
   height: 100%;
-  /* width: 100%;
-  flex-direction: column; */
   position: relative;
 }
 
 .top-section {
   display: flex;
   align-items: flex-end;
-  background-image: url(../assets/Background.png);
+  background-image: url(../assets/background.png);
   background-repeat: no-repeat;
 }
 

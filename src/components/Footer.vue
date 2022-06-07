@@ -3,7 +3,7 @@
     <div class="footer__content">
       <div class="row footer__firstline">
         <div class="footer__logo">
-          <img class="logo__img" src="../assets/Logo.png" alt="Logo" />
+          <img class="logo__img" src="../assets/logo.png" alt="Logo" />
         </div>
         <div class="footer__links">
           <router-link :to="{ name: 'LoginView' }"

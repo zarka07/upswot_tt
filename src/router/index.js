@@ -10,7 +10,8 @@ const routes = [
   {
     path: '/todo',
     name: 'todoPage',
-    component: () => import(/* webpackChunkName: "ToDoPage" */ '../views/ToDoView.vue')
+    component: () => import(/* webpackChunkName: "ToDoPage" */ '../views/ToDoView.vue'),
+    props: true,
   }
 ]
 

@@ -128,15 +128,20 @@ export default {
       password: null,
       usernameErr:false,
       passwordErr:false,
-      auth: false,
+      auth: {
+        status:false,
+        username:""
+      },
     };
   },
   methods:{
     onSubmit(){
       if(this.username==='Admin'){
         if(this.password===12345){
-          this.auth = true
-          localStorage.setItem("auth", JSON.stringify(this.auth))
+          this.auth.status = true
+          this.auth.username = this.username
+          localStorage.setItem("username",this.auth.username)
+          localStorage.setItem("auth", JSON.stringify(this.auth.status)), 
           this.$router.push({name:'todoPage'})
         } else {
           this.passwordErr = true
